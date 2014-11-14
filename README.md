@@ -24,6 +24,44 @@ var utils = require('template-utils');
 ## API
 
 
+
+## [.headings](lib/utils/headings.js#L22)
+
+Adjust markdown heading levels.
+
+* `str` **{String}**    
+* `returns`: {String}  
+
+Adds one heading level next to all markdown headings to make
+them correct within the scope of the inheriting document.
+_Headings in fenced code blocks are skipped_.
+
+```js
+utils.heading(str);
+```
+
+## [.toTemplate](lib/utils/toTemplate.js#L22)
+
+Convert a Vinyl file object to a non-vinyl template object.
+
+* `file` **{Object}**: Vinyl file object    
+* `returns` **{Object}**: Object with properties expected by Template or Template apps  
+
+```js
+var template = utils.toTemplate(file);
+```
+## [.toVinyl](lib/utils/toVinyl.js#L19)
+
+Convert a `template` object to a Vinyl file object.
+
+* `file` **{Object}**: Object with properties expected by Template    
+* `returns` **{Object}**: Vinyl file object  
+
+```js
+var file = utils.toVinyl(template);
+```
+
+
 ## Contributing
 Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/jonschlinkert/template-utils/issues)
 

@@ -3,7 +3,6 @@
 var path = require('path');
 var parsePath = require('parse-filepath');
 var matter = require('gray-matter');
-var set = require('set-object');
 var _ = require('lodash');
 
 var toVinyl = require('./lib/utils/toVinyl');
