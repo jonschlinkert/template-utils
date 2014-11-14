@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = {
   base: process.cwd(),
-  content: null,
+  content: 'This is content',
   cwd: process.cwd(),
   data: {
     dest: {
@@ -20,6 +20,7 @@ module.exports = {
     src: {
       basename: 'README.md',
       dirname: process.cwd(),
+      ext: '.md',
       extSegments: ['.md'],
       extname: '.md',
       name: 'README',
@@ -43,13 +44,16 @@ module.exports = {
     src: {
       basename: 'README.md',
       dirname: process.cwd(),
+      ext: '.md',
       extSegments: ['.md'],
       extname: '.md',
       name: 'README',
       path: process.cwd() + '/README.md'
     }
   },
-  orig: null,
+  orig: '---\ntitle: README\n---\nThis is content',
   path: process.cwd() + '/README.md',
   stat: null
 };
+
+console.log(module.exports)

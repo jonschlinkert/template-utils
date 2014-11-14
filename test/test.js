@@ -56,9 +56,8 @@ describe('utils', function () {
 
   describe('.toTemplate()', function () {
     it('should create a template object from a vinyl file object:', function () {
-      var template = utils.toVinyl({path: process.cwd() + '/README.md'});
-      console.log(utils.toTemplate(template))
-      // utils.toTemplate(template).should.eql(require('./expected/template-object'));
+      var template = utils.toVinyl({path: process.cwd() + '/README.md', content: '---\ntitle: README\n---\nThis is content'});
+      utils.toTemplate(template).should.eql(require('./expected/template-object'));
     });
   });
 });
