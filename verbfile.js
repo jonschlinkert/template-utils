@@ -1,12 +1,7 @@
 'use strict';
 
 var verb = require('verb');
-// var escaper = require('./lib/middleware/escape');
-// verb.route(/\.*/).before(escaper.escape(verb));
-// verb.route(/\.*/).after(escaper.unescape(verb));
-// // temporary data used in fixtures
-// verb.data({foo: 'bar'});
-
+verb.data({foo: 'bar'});
 
 verb.task('readme', function() {
   verb.src('.verb.md')
@@ -14,4 +9,3 @@ verb.task('readme', function() {
 });
 
 verb.task('default', ['readme']);
-// console.log(verb);

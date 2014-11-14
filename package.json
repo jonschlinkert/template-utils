@@ -1,7 +1,7 @@
 {
   "name": "template-utils",
   "description": "Utils for [Template](https://github.com/jonschlinkert/template).",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/jonschlinkert/template-utils",
   "author": {
     "name": "Jon Schlinkert",
@@ -31,13 +31,13 @@
     "debug": "^2.1.0",
     "escape-delims": "^0.4.0",
     "export-files": "^0.1.0",
+    "extract-gfm": "^0.1.0",
     "gray-matter": "^0.5.3",
     "lodash": "^2.4.1",
     "parse-filepath": "^0.4.0",
     "vinyl": "^0.4.4"
   },
   "devDependencies": {
-    "extract-gfm": "^0.1.0",
     "mocha": "*",
     "should": "*",
     "verb": "^0.3.4"
