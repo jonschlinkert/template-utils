@@ -1,0 +1,53 @@
+{
+  "name": "template-utils",
+  "description": "Utils for [Template](https://github.com/jonschlinkert/template).",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/template-utils",
+  "author": {
+    "name": "Jon Schlinkert",
+    "url": "https://github.com/jonschlinkert"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jonschlinkert/template-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/template-utils/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jonschlinkert/template-utils/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "dependencies": {
+    "debug": "^2.1.0",
+    "escape-delims": "^0.4.0",
+    "export-files": "^0.1.0",
+    "gray-matter": "^0.5.3",
+    "lodash": "^2.4.1",
+    "parse-filepath": "^0.4.0",
+    "vinyl": "^0.4.4"
+  },
+  "devDependencies": {
+    "extract-gfm": "^0.1.0",
+    "mocha": "*",
+    "should": "*"
+  },
+  "keywords": [
+    "util",
+    "utils",
+    "utilities",
+    "utility",
+    "engine",
+    "templates",
+    "template"
+  ]
+}
