@@ -7,11 +7,21 @@
 
 'use strict';
 
+var fs = require('fs');
 var assert = require('assert');
 var should = require('should');
 var utils = require('..');
 
 describe('utils', function () {
+  describe.only('.comments()', function () {
+    it('should extract comments and format them:', function () {
+      var str = fs.readFileSync('test/actual/comments.md', 'utf8');
+      var comments = utils.comments('test/fixtures/comments-1.js');
+      // fs.writeFileSync('test/actual/comments.md', comments);
+      comments.should.eql(str);
+    });
+  });
+
   describe('.headings()', function () {
     it('should skip fenced code blocks:', function () {
       utils.headings('```js\n# Foo\n```\n# Bar').should.eql('```js\n# Foo\n```\n\n## Bar');
@@ -32,8 +42,8 @@ describe('utils', function () {
   });
 
   describe('.toVinyl()', function () {
-    // use the full object in these tests to ensure that we catch
-    // any changes to the file object
+    // compare the full fixture and expected objects in these tests
+    // to ensure that we catch any changes to the file object
     it('should create a vinyl file object:', function () {
       var file = utils.toVinyl({});
       file.should.eql({

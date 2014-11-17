@@ -53,6 +53,7 @@ module.exports = {
   },
   orig: '---\ntitle: README\n---\nThis is content',
   path: process.cwd() + '/README.md',
+  relative: 'README.md',
   stat: null
 };
 
