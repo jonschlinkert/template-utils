@@ -32,7 +32,7 @@
     "chalk": "^0.5.1",
     "debug": "^2.1.0",
     "escape-delims": "^0.4.0",
-    "export-files": "^0.1.0",
+    "export-files": "^0.1.4",
     "extend-shallow": "^0.1.1",
     "extract-gfm": "^0.1.0",
     "globby": "^0.1.1",
@@ -41,12 +41,11 @@
     "lodash": "^2.4.1",
     "lookup-deps": "^0.2.4",
     "parse-filepath": "^0.4.0",
+    "pretty-hrtime": "^0.2.2",
     "vinyl": "^0.4.4"
   },
   "devDependencies": {
     "mocha": "*",
-    "pretty-hrtime": "^0.2.2",
-    "pretty-ms": "^1.0.0",
     "should": "*",
     "verb": "^0.3.4"
   },
