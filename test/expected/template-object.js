@@ -28,7 +28,6 @@ module.exports = {
     }
   },
   ext: '.md',
-  history: [process.cwd() + '/README.md'],
   locals: {},
   options: {
     dest: {
