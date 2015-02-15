@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = {
   base: process.cwd(),
-  content: 'This is content',
+  content: '\nThis is content',
   cwd: process.cwd(),
   data: {
     dest: {
