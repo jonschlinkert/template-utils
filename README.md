@@ -27,7 +27,6 @@ var utils = require('template-utils');
 
 
 
-
 ### [.defaultProps](./lib/utils/defaultProps.js#L14)
 
 * `template` **{Object}**: Template Object to add properties to.    
@@ -48,6 +47,7 @@ _Headings in fenced code blocks are skipped_.
 ```js
 utils.heading(str);
 ```
+
 
 
 ### [.parsePath](./lib/utils/parsePath.js#L15)
