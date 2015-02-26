@@ -9,8 +9,8 @@
 
 var fs = require('fs');
 var assert = require('assert');
-require('should');
 var utils = require('..');
+require('should');
 
 
 describe('.headings()', function () {
@@ -52,8 +52,13 @@ describe('.toTemplate()', function () {
 });
 
 describe('logging', function () {
-  it('should create a template object from a vinyl file object:', function () {
-    var template = utils.toVinyl({path: process.cwd() + '/README.md', content: '---\ntitle: README\n---\nThis is content'});
-    utils.toTemplate(template).should.eql(require('./expected/template-object'));
+  it('should create template tag:', function () {
+    utils.makeTag('foo', 'bar').should.equal('{{foo "bar"}}');
+    utils.makeTag('foo').should.equal('{{foo}}');
+  });
+
+  it('should use custom delimiters:', function () {
+    utils.makeTag('foo', 'bar', ['<%=', '%>']).should.equal('<%= foo("bar") %>');
+    utils.makeTag('foo', null, ['<%=', '%>']).should.equal('<%= foo %>');
   });
 });
