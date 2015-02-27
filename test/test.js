@@ -62,3 +62,13 @@ describe('logging', function () {
     utils.makeTag('foo', null, ['<%=', '%>']).should.equal('<%= foo %>');
   });
 });
+
+describe('utils.escape', function () {
+  it('should use noncharacters to replace escaped delmiters:', function () {
+    utils.escapeFn()('<%%= foo("bar") %>').should.equal('\uFFFF\uFFFE foo("bar") \uFDD1\uFDD2');
+  });
+
+  it('should replace noncharacters with delmiters:', function () {
+    utils.unescapeFn()('\uFFFF\uFFFE foo("bar") \uFDD1\uFDD2').should.equal('<%%= foo("bar") %>');
+  });
+});
