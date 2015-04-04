@@ -4,7 +4,7 @@ var path = require('path');
 
 module.exports = {
   base: process.cwd(),
-  content: '\nThis is content',
+  content: '---\ntitle: README\n---\nThis is content',
   cwd: process.cwd(),
   data: {
     dest: {
@@ -50,10 +50,7 @@ module.exports = {
       path: process.cwd() + '/README.md'
     }
   },
-  orig: '---\ntitle: README\n---\nThis is content',
   path: process.cwd() + '/README.md',
   relative: 'README.md',
   stat: null
 };
-
-// console.log(module.exports)
