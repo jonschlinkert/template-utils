@@ -7,58 +7,14 @@
 
 'use strict';
 
+require('should');
 var fs = require('fs');
 var assert = require('assert');
+var Template = require('template');
+var template = new Template();
 var utils = require('..');
-require('should');
 
 
-describe('.headings()', function () {
-  it('should skip fenced code blocks:', function () {
-    utils.headings('```js\n# Foo\n```\n# Bar').should.eql('```js\n# Foo\n```\n\n## Bar');
-  });
+describe('tests', function () {
 
-  it('should add one heading level:', function () {
-    utils.headings('# Bar').should.eql('## Bar');
-    utils.headings('## Bar').should.eql('### Bar');
-    utils.headings('### Bar').should.eql('#### Bar');
-  });
-
-  it('should add the specified number of heading levels:', function () {
-    utils.headings('# Bar', 1).should.eql('## Bar');
-    utils.headings('# Bar', 2).should.eql('### Bar');
-    utils.headings('# Bar', 3).should.eql('#### Bar');
-    utils.headings('# Bar', 4).should.eql('##### Bar');
-  });
-});
-
-describe('.toVinyl()', function () {
-  it('should create a vinyl file object:', function () {
-    var file = utils.toVinyl({});
-    file.should.have.properties(['_contents', 'base', 'cwd', 'data', 'locals']);
-  });
-
-  it('should add the `.path` property to history:', function () {
-    var file = utils.toVinyl({path: process.cwd() + '/README.md'});
-    file.should.have.property('history', [process.cwd() + '/README.md']);
-  });
-});
-
-describe('.toTemplate()', function () {
-  it('should create a template object from a vinyl file object:', function () {
-    var template = utils.toVinyl({path: process.cwd() + '/README.md', content: '---\ntitle: README\n---\nThis is content'});
-    utils.toTemplate(template).should.eql(require('./expected/template-object'));
-  });
-});
-
-describe('logging', function () {
-  it('should create template tag:', function () {
-    utils.makeTag('foo', 'bar').should.equal('{{foo "bar"}}');
-    utils.makeTag('foo').should.equal('{{foo}}');
-  });
-
-  it('should use custom delimiters:', function () {
-    utils.makeTag('foo', 'bar', ['<%=', '%>']).should.equal('<%= foo("bar") %>');
-    utils.makeTag('foo', null, ['<%=', '%>']).should.equal('<%= foo %>');
-  });
 });
