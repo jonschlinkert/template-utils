@@ -1,7 +1,7 @@
 {
   "name": "template-utils",
   "description": "Utils for [Template], and Template-based applications.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "homepage": "https://github.com/jonschlinkert/template-utils",
   "author": {
     "name": "Jon Schlinkert",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "array-unique": "^0.2.1",
+    "chalk": "^1.0.0",
     "export-dirs": "^0.2.4",
     "export-files": "^2.0.1",
     "extract-gfm": "^0.1.0",
@@ -38,10 +39,11 @@
     "is-plain-object": "^2.0.0",
     "is-stream": "^1.0.1",
     "isobject": "^1.0.0",
+    "load-templates": "^0.7.3",
     "map-files": "^0.7.4",
+    "mixin-deep": "^1.1.0",
     "object.reduce": "^0.1.7",
     "parse-gitignore": "^0.1.2",
-    "relative": "^3.0.0",
     "to-template": "^0.1.2",
     "to-vinyl": "^0.1.2",
     "vinyl": "^0.4.6"
