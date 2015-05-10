@@ -44,26 +44,7 @@ files onto `app.views`.
 * `file` **{Object}**: Vinyl file object
 * `returns` **{Object}**: Template object
 
-### [headings](lib/utils/headings.js#L22)
-
-Adjust markdown heading levels.
-
-Adds one heading level next to all markdown headings to make
-them correct within the scope of the inheriting document.
-_Headings in fenced code blocks are skipped_.
-
-**Params**
-
-* `str` **{String}**
-* `returns` **{String}**
-
-**Example**
-
-```js
-utils.heading(str);
-```
-
-### [.toTemplate](lib/utils/index.js#L32)
+### [.toTemplate](lib/utils/index.js#L31)
 
 Convert a Vinyl file object to a non-vinyl template object.
 
@@ -78,7 +59,7 @@ Convert a Vinyl file object to a non-vinyl template object.
 var template = utils.toTemplate(file);
 ```
 
-### [.toVinyl](lib/utils/index.js#L47)
+### [.toVinyl](lib/utils/index.js#L46)
 
 Convert a `template` object to a Vinyl file object.
 
@@ -93,7 +74,7 @@ Convert a `template` object to a Vinyl file object.
 var file = utils.toVinyl(template);
 ```
 
-### [.isVinyl](lib/utils/index.js#L63)
+### [.isVinyl](lib/utils/index.js#L62)
 
 Returns true if a file is a vinyl file object.
 
@@ -109,7 +90,7 @@ Returns true if a file is a vinyl file object.
 var file = utils.isVinyl(file);
 ```
 
-### [.pushToStream](lib/utils/index.js#L102)
+### [.pushToStream](lib/utils/index.js#L101)
 
 Push a collection of templates into the stream as vinyl files.
 
@@ -139,7 +120,7 @@ module.exports = function myPlugin(app) {
 };
 ```
 
-### [.bindAll](lib/utils/index.js#L126)
+### [.bindAll](lib/utils/index.js#L125)
 
 Bind a `thisArg` to all the functions on the target
 array of object.
@@ -150,7 +131,7 @@ array of object.
 * `thisArg` **{Object}**: Object to bind to the functions
 * `returns` **{Object|Array}**: Object or Array with bound functions.
 
-### [.basename](lib/utils/index.js#L171)
+### [.basename](lib/utils/index.js#L170)
 
 Get the basename of a file path, excluding extension.
 
@@ -166,7 +147,7 @@ utils.basename('a/b/c.hbs');
 //=> 'c'
 ```
 
-### [.renameKey](lib/utils/index.js#L199)
+### [.renameKey](lib/utils/index.js#L198)
 
 Rename a filepath to use as the key for caching templates.
 
@@ -188,7 +169,7 @@ utils.renameKey('a/b/c/d/e/f.md', {last: 1, ext: false});
 //=> 'f'
 ```
 
-### [.getExt](lib/utils/index.js#L233)
+### [.getExt](lib/utils/index.js#L232)
 
 Get the extension from a string or from the first string in an array of file paths.
 
@@ -206,7 +187,7 @@ utils.getExt(['a/b/c.hbs', 'x/y/z.hbs']);
 //=> '.hbs'
 ```
 
-### [.formatExt](lib/utils/index.js#L259)
+### [.formatExt](lib/utils/index.js#L258)
 
 Ensure file extensions are formatted properly for lookups.
 
@@ -225,7 +206,7 @@ utils.formatExt('.hbs');
 //=> '.hbs'
 ```
 
-### [.stripDot](lib/utils/index.js#L282)
+### [.stripDot](lib/utils/index.js#L281)
 
 Strip the dot from a file extension
 
@@ -241,7 +222,7 @@ utils.stripDot('.hbs');
 //=> 'hbs'
 ```
 
-### [.exts](lib/utils/index.js#L304)
+### [.exts](lib/utils/index.js#L303)
 
 Sanitize an array of extensions before converting them to regex.
 
@@ -253,7 +234,7 @@ a regex to match the given file extensions.
 * `extensions` **{Array}**: Array of file extensions
 * `returns` **{Array}**
 
-### [.extensionRe](lib/utils/index.js#L326)
+### [.extensionRe](lib/utils/index.js#L325)
 
 Creates a regex to match only the file extensions of registered engines.
 
@@ -265,7 +246,7 @@ extensions from being processed.
 * `str` **{String}**
 * `returns` **{RegExp}**
 
-### [.arrayify](lib/utils/index.js#L349)
+### [.arrayify](lib/utils/index.js#L348)
 
 Cast `value` to an array.
 
@@ -284,7 +265,7 @@ utils.arrayify(['abc']);
 //=> ['abc']
 ```
 
-### [.headings](lib/utils/index.js#L374)
+### [.headings](lib/utils/index.js#L373)
 
 Adjust markdown heading levels.
 
