@@ -1,7 +1,7 @@
 {
   "name": "template-utils",
   "description": "Utils for [Template], and Template-based applications.",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "homepage": "https://github.com/jonschlinkert/template-utils",
   "author": {
     "name": "Jon Schlinkert",
