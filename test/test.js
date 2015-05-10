@@ -7,6 +7,7 @@
 
 'use strict';
 
+/* deps: mocha */
 require('should');
 var fs = require('fs');
 var assert = require('assert');
@@ -15,7 +16,6 @@ var utils = require('..')._;
 
 var Template = require('template');
 var template = new Template();
-
 
 describe('.ignore()', function () {
   it('should return an array of ignored files:', function () {
@@ -75,34 +75,41 @@ describe('.isVinyl()', function () {
   });
 });
 
-describe('.toTemplate()', function () {
-  describe('properties', function () {
-    it('should create a template object from a vinyl file object:', function () {
-      var file = utils.toVinyl({path: process.cwd() + '/README.md', content: '---\ntitle: README\n---\nThis is content'});
-
-      utils.toTemplate(file).should.eql({
-        history: [ '/Users/jonschlinkert/dev/template/utils/template-utils/README.md' ],
-        cwd: '/Users/jonschlinkert/dev/template/utils/template-utils',
-        base: '/Users/jonschlinkert/dev/template/utils/template-utils',
-        content: '---\ntitle: README\n---\nThis is content',
-        relative: 'README.md',
-        path: '/Users/jonschlinkert/dev/template/utils/template-utils/README.md',
-        data: {}
-      });
-    });
+describe('.basename()', function () {
+  it('should get the basename of a filepath without extension:', function () {
+    utils.basename('a/b/c/d.e').should.equal('d');
+    utils.basename('a/b/c/b.d.e').should.equal('b.d');
   });
 });
 
-describe('.toVinyl()', function () {
-  describe('properties', function () {
-    it('should create a vinyl file object:', function () {
-      var file = utils.toVinyl({path: '.', content: ''});
-      file.should.have.properties(['_contents', 'base', 'cwd']);
-    });
+describe('.formatExt()', function () {
+  it('should ensure that a file extension has a dot:', function () {
+    utils.formatExt('a').should.equal('.a');
+    utils.formatExt('.a').should.equal('.a');
+  });
+});
 
-    it('should add the value of the `.path` property to history:', function () {
-      var file = utils.toVinyl({path: process.cwd() + '/README.md', content: ''});
-      file.should.have.property('history', [process.cwd() + '/README.md']);
-    });
+describe('.stripDot()', function () {
+  it('should remove the dot from a file extension:', function () {
+    utils.stripDot('.a').should.equal('a');
+    utils.stripDot('a').should.equal('a');
+  });
+});
+
+describe('.getExt()', function () {
+  it('should get a file extension:', function () {
+    utils.getExt('a/b/c/d/a').should.equal('');
+    utils.getExt('a/b/c/d/hbs').should.equal('');
+    utils.getExt('a/b/c/d/e.hbs').should.equal('.hbs');
+    utils.getExt('a/b/c.a').should.equal('.a');
+  });
+});
+
+describe('.renameKey()', function () {
+  it('should rename the filepath:', function () {
+    utils.renameKey('a/b/c/d.e', {last: 1}).should.equal('d.e');
+    utils.renameKey('a/b/c/d.e', {last: 2}).should.equal('c/d.e');
+    utils.renameKey('a/b/c/d.e', {last: 3}).should.equal('b/c/d.e');
+    utils.renameKey('a/b/c/d.e', {last: 3, ext: false}).should.equal('b/c/d');
   });
 });
